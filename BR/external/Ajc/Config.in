@@ -1,0 +1,1 @@
+source "$BR2_EXTERNAL_AJC_PATH/package/bme280/Config.in"

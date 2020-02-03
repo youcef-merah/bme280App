@@ -1,0 +1,6 @@
+config BR2_PACKAGE_BME280
+        bool "bme280"
+	depends on BR2_PACKAGE_WIRINGPI
+	depends on BR2_PACKAGE_I2C_TOOLS
+        help
+          This deals with i2c protocol and the wiringPi library

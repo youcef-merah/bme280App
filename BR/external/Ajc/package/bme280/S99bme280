@@ -1,0 +1,9 @@
+#!/bin/sh
+
+printf "Install modules for i2c protocol"
+modprobe i2c-dev
+modprobe i2c-bcm2835
+
+printf "Launch dataExtractor"
+#change the IP adress here
+dataExtractor.sh 10.0.5.41 2345 &
