@@ -1,0 +1,12 @@
+#ifndef BME280SERVER_GLOBAL_H
+#define BME280SERVER_GLOBAL_H
+
+#include <QtCore/QtGlobal>
+
+#if defined(BME280SERVER_LIBRARY)
+    #define BME280SERVER_EXPORT Q_DECL_EXPORT
+#else
+    #define BME280SERVER_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // BME280SERVER_GLOBAL_H
