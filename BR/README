@@ -1,0 +1,21 @@
+These files contain the configuration of Buildroot
+in order to make our RPI 3 ableis to send the temperature from a bme280 sensor.
+The data is sent to a server where the ajc_project is running 
+(see ../Qt/ajc_project/README)
+
+You need to change the adresse IP of the server in the file:
+external/Ajc/package/bme280/S99bme280 line 9
+
+Next untar dl to add the bme280 directory to your local dl/
+
+Then run in Buildroot home directory :
+$ make BR2_EXTERNAL=../external menuconfig
+
+Select the packages i2c-tools and wiringpi
+Select the external package bme280
+
+Run :
+$ make
+
+Finally (where <BR> is the home directory) :
+$ dd if=output/images/ramdisk.img of=/dev/<ramdisk node> --status=progress
