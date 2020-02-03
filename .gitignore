@@ -1,0 +1,6 @@
+lib/*
+bin/*
+*.pro.user
+*.qmake*
+Makefile
+src/*/Makefile

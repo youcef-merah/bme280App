@@ -1,0 +1,52 @@
+The current directory should contain at least the following tree :
+.
+├── ajc_project.pro
+├── ajc_project.pro.user
+├── bin
+├── lib
+├── README
+└── src
+    ├── bme280App
+    │   ├── bme280App.pro
+    │   ├── bme280App.pro.user
+    │   ├── main.cpp
+    │   ├── mainwindow.cpp
+    │   ├── mainwindow.h
+    │   └── mainwindow.ui
+    ├── TcpServer
+    │   ├── bme280Server.cpp
+    │   ├── bme280Server_global.h
+    │   ├── bme280Server.h
+    │   ├── README.md
+    │   ├── TcpServer.pro
+    │   └── TcpServer.pro.user
+    └── Thermometer
+        ├── thermometer.cpp
+        ├── thermometer_global.h
+        ├── thermometer.h
+        ├── Thermometer.pro
+        └── thermometer.pro.user
+
+
+To compile and launch the program, an installation of Qt creator is required.
+You can install it from  the open source version available on:
+https://www.qt.io/
+
+The installation will make a new directory in your home directoryi ~/<Qt>.
+Qt provides its own qmake version
+You can find it on : ~/<Qt>/<version>/gcc_64/bin/
+
+qmake is used to generate the Makefile of this project.
+If a qmake binary file is already installed on your system, do NOT use it.
+That of Qt uses the Qt libraries.
+
+To generate the Makefile of the project run:
+~/<Qt>/<version>/gcc_64/bin/qmake ajc_project.pro -spec linux-g++ CONFIG+=release CONFIG+=qml_release
+$ make -f Makefile qmake_all
+
+Then you can compile with:
+$ make
+
+Then run:
+$ LD_LIBRARY_PATH=lib ./bin/app &
+
